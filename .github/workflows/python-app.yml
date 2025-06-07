@@ -12,10 +12,6 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
-        # Exclude Python 3.9 on Windows due to compatibility issues
-        exclude:
-          - os: windows-latest
-            python-version: "3.9"
 
     steps:
       - uses: actions/checkout@v4
