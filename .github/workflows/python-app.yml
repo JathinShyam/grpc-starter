@@ -32,6 +32,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Create generated directory
+        run: |
+          mkdir -p generated
+          touch generated/__init__.py
+
       - name: Generate gRPC code
         run: |
           python -m grpc_tools.protoc -I./protos --python_out=generated --grpc_python_out=generated ./protos/calculator.proto
