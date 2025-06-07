@@ -19,7 +19,7 @@ A complete implementation covering Phase 1 learning objectives:
 1. Clone the repository (if using Git):
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:JathinShyam/grpc-starter.git
 cd grpc
 ```
 
