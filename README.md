@@ -20,7 +20,7 @@ A complete implementation covering Phase 1 learning objectives:
 
 ```bash
 git clone git@github.com:JathinShyam/grpc-starter.git
-cd grpc
+cd grpc-starter
 ```
 
 2. Create and activate virtual environment:
