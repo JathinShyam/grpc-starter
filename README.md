@@ -9,7 +9,7 @@ A complete implementation covering Phase 1 learning objectives:
 
 ## Prerequisites
 
-- Python 3.7 or higher
+- Python 3.11 or higher
 - pip (Python package installer)
 - Protocol Buffers compiler (protoc)
 - Git (optional, for version control)
