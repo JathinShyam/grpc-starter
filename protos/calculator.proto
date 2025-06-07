@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package generated;
+
+// Service definition
+service Calculator {
+  // Unary RPC: Add two numbers
+  rpc Add (AddRequest) returns (AddResponse);
+  
+  // Unary RPC: Divide two numbers with error handling
+  rpc Divide (DivideRequest) returns (DivideResponse);
+
+  // Unary RPC: Subtract two numbers
+  rpc Subtract (SubtractRequest) returns (SubtractResponse);
+
+  // Unary RPC: Multiply two numbers
+  rpc Multiply (MultiplyRequest) returns (MultiplyResponse);
+}
+
+// Request messages
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message DivideRequest {
+  int32 dividend = 1;
+  int32 divisor = 2;
+}
+
+message SubtractRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message MultiplyRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+// Response messages
+message AddResponse {
+  int32 result = 1;
+}
+
+message DivideResponse {
+  oneof result {
+    float quotient = 1;
+    string error = 2;
+  }
+}
+
+message SubtractResponse {
+  oneof result {
+    float a = 1;
+    string error = 2;
+  }
+}
+
+message MultiplyResponse {
+  int32 result = 1;
+}
