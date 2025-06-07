@@ -41,9 +41,13 @@ jobs:
         run: |
           python -m grpc_tools.protoc -I./protos --python_out=generated --grpc_python_out=generated ./protos/calculator.proto
 
+      - name: Fix imports in generated files
+        run: |
+          sed -i 's/import calculator_pb2 as calculator__pb2/from generated import calculator_pb2 as calculator__pb2/' generated/calculator_pb2_grpc.py
+
       - name: Run tests with coverage
         run: |
-          python -m pytest tests/ --cov=. --cov-report=xml
+          PYTHONPATH=$PYTHONPATH:$(pwd) python -m pytest tests/ --cov=. --cov-report=xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
